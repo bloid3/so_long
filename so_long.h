@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:16:31 by papereir          #+#    #+#             */
-/*   Updated: 2023/11/21 18:11:49 by papereir         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:04:15 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ typedef struct	s_data {
 }t_data;
 
 t_map struct_init(t_map *map);
+void   *get_map(char *file, t_map *map);
+int isBer(char  *name);
 
 #endif

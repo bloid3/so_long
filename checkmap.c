@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 17:37:35 by papereir          #+#    #+#             */
-/*   Updated: 2023/11/21 17:40:47 by papereir         ###   ########.fr       */
+/*   Updated: 2023/11/21 18:33:45 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,9 @@ t_map struct_init(t_map *map)
     map->s_player.y = 0;
     map->s_player.movements = 0;
     return (*map);
+}
+
+t_map lencheck(t_map *map)
+{
+    
 }
