@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:16:31 by papereir          #+#    #+#             */
-/*   Updated: 2023/11/21 19:04:15 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/02 19:34:11 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@
 # include <stdarg.h>
 # define BUFFER_SIZE 42
 
-//GNL FUNCTIONS
-
+//GNL
 char	*ft_read_to_left_str(int fd, char *left_str);
 char	*get_next_line(int fd);
 char	*ft_get_line(char *left_str);
@@ -73,8 +72,22 @@ typedef struct	s_data {
 	int		endian;
 }t_data;
 
-t_map struct_init(t_map *map);
-void   *get_map(char *file, t_map *map);
-int isBer(char  *name);
+enum {
+	SZEIMG = 64,
+	MAXWIDTH = 5120,
+	MAXHEIGHT = 2880
+};
+
+void	struct_init(t_map *map);
+void   get_map(char *file, t_map *map);
+void 	isBer(char  *name);
+t_map	*lencheck(t_map *map);
+t_map	*closecheck(t_map *map);
+void	error(char c);
+t_map	*insidecheck(t_map *map);
+t_map   *finalchecks(t_map *map);
+t_map   *checkitems(t_map *map);
+t_map   *checkpath(t_map *map);
+void drawMapGuarro(t_map *map);
 
 #endif

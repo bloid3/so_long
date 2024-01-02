@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 18:18:59 by papereir          #+#    #+#             */
-/*   Updated: 2024/01/02 19:41:09 by papereir         ###   ########.fr       */
+/*   Created: 2024/01/02 18:57:36 by papereir          #+#    #+#             */
+/*   Updated: 2024/01/02 19:20:12 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+/* void    load(t_map *map)
 {
-	t_map	map;
+	map->s_xpm.mlx_win = mlx_new_image(map->s_xpm.mlx, (map->width - 1) * SZEIMG, (map->height - 1) * SZEIMG);
+	map->s_xpm.floor = mlx_
+} */
 
-	map.cigs = 2;
-	/* struct_init(map); */
-	if (argc != 2)
-		return (0);
-	isBer(argv[1]);
-	/*
-	map->s_xpm.mlx = mlx_init();
-	get_map(argv[1], map);
-	drawMapGuarro(map); */
-	return (0);
+void drawMapGuarro(t_map *map) {
+	int i;
+	int	j;
+
+	i = 0;
+	while (i < map->width)
+	{
+		j = 0;
+		while (j < map->height - 1)
+		{
+			write(1, &map->map[i][j], 1);
+			j++;
+		}
+		i++;
+	}
 }
