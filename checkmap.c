@@ -6,13 +6,13 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 17:37:35 by papereir          #+#    #+#             */
-/*   Updated: 2024/01/02 19:36:23 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/02 19:42:43 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	struct_init(t_map *map)
+t_map	struct_init(t_map *map)
 {
 	map->height = 0;
 	map->width = 0;
@@ -22,6 +22,7 @@ void	struct_init(t_map *map)
 	map->s_player.x = 0;
 	map->s_player.y = 0;
 	map->s_player.movements = 0;
+	return(*map);
 }
 
 t_map	*lencheck(t_map *map)

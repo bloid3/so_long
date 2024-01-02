@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:16:31 by papereir          #+#    #+#             */
-/*   Updated: 2024/01/02 19:34:11 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/02 19:41:56 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ enum {
 	MAXHEIGHT = 2880
 };
 
-void	struct_init(t_map *map);
+t_map	struct_init(t_map *map);
 void   get_map(char *file, t_map *map);
 void 	isBer(char  *name);
 t_map	*lencheck(t_map *map);
