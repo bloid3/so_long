@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:16:31 by papereir          #+#    #+#             */
-/*   Updated: 2024/01/02 19:41:56 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:53:39 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@
 # include <stdarg.h>
 # define BUFFER_SIZE 42
 
-//GNL
-char	*ft_read_to_left_str(int fd, char *left_str);
+// GNL //
+
 char	*get_next_line(int fd);
+char	*ft_read_to_left_str(int fd, char *left_str);
 char	*ft_get_line(char *left_str);
 char	*ft_new_left_str(char *left_str);
+size_t	ft_strlen2(char *s);
 
 
 typedef struct s_player
@@ -43,10 +45,9 @@ typedef struct s_xpm
 	void *mlx_win;
 	void *wall;
 	void *door;
-	void *light;
+	void *cig;
 	void *p;
 	void *floor;
-	void *open_door;
 }t_xpm;
 
 typedef struct s_map
@@ -78,16 +79,37 @@ enum {
 	MAXHEIGHT = 2880
 };
 
+/// KEYS
+
+# define DESTROY 	17
+# define ESC		53
+# define UP			13
+# define LEFT		0
+# define DOWN		1
+# define RIGHT		2
+
+void	pressup(t_map *map);
+void	pressdown(t_map *map);
+void	pressright(t_map *map);
+void	pressleft(t_map *map);
+
 t_map	struct_init(t_map *map);
-void   get_map(char *file, t_map *map);
+void	get_map(char *file, t_map *map);
 void 	isBer(char  *name);
 t_map	*lencheck(t_map *map);
-t_map	*closecheck(t_map *map);
-void	error(char c);
+t_map	*cornercheck(t_map *map);
+int		error(char c);
 t_map	*insidecheck(t_map *map);
 t_map   *finalchecks(t_map *map);
-t_map   *checkitems(t_map *map);
-t_map   *checkpath(t_map *map);
-void drawMapGuarro(t_map *map);
+void	extrachecker(t_map *map);
+void	ultimatecheck(t_map *map);
+void	posfinder(int *x, int *y, t_map *map);
+void	checkitem(t_map *map, int y, int x);
+void	pathcheck(t_map *map);
+int		drawmap(t_map *map);
+void	drawassitant(t_map *map, int i, int j);
+int		key_detect(int keycode, t_map *map);
+void	load(t_map *map);
+int		win(char c);
 
 #endif

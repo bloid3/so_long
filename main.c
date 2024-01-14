@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:18:59 by papereir          #+#    #+#             */
-/*   Updated: 2024/01/02 19:44:00 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:25:23 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main(int argc, char **argv)
 	isBer(argv[1]);
 	map.s_xpm.mlx = mlx_init();
 	get_map(argv[1], &map);
-	drawMapGuarro(&map); 
+	load(&map);
+	mlx_loop_hook(map.s_xpm.mlx, drawmap, &map);
+	mlx_key_hook(map.s_xpm.mlx_win, key_detect, &map);
+	mlx_loop(map.s_xpm.mlx);
 	return (0);
 }

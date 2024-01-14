@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 18:57:36 by papereir          #+#    #+#             */
-/*   Updated: 2024/01/02 19:20:12 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/14 12:06:00 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void drawMapGuarro(t_map *map) {
 	int	j;
 
 	i = 0;
-	while (i < map->width)
+	while (i < map->height)
 	{
 		j = 0;
-		while (j < map->height - 1)
+		while (j < map->width)
 		{
 			write(1, &map->map[i][j], 1);
 			j++;

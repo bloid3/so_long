@@ -6,7 +6,7 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 17:37:35 by papereir          #+#    #+#             */
-/*   Updated: 2024/01/02 19:42:43 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:22:57 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,17 @@ t_map	struct_init(t_map *map)
 
 t_map	*lencheck(t_map *map)
 {
-	int row_len;
-	int i;
-	
+	int	i;
+	int	j;
+
 	i = 0;
-	while (i < map->height)
+	while (i < map->height - 1)
 	{
-		row_len = ft_strlen(map->map[i]);
-		if (row_len != map->height)
-			error('R');
+		j = 0;
+		while (map->map[i][j] != '\0')
+			j++;
+		if (j != map->width - 1)
+			error('L');
 		i++;
 	}
 	return (map);
@@ -70,30 +72,54 @@ t_map	*closecheck(t_map *map)
 
 t_map	*insidecheck(t_map *map)
 {
-	int	i;
-	int	j;
+	static int	i;
+	static int	j;
 
-	i = 0;
-	while (i < map->height -1)
+	while (i < map->height - 1)
 	{
-		while (j < map-> width)
+		while (j < map->width)
 		{
 			if (map->map[i][j] == 'P')
 			{
 				map->player++;
 				map->s_player.y = i;
 				map->s_player.x = j;
-			}
+			}	
 			else if (map->map[i][j] == 'E')
-				map->exit++;
+			map->exit++;
 			else if (map->map[i][j] == 'C')
-				map->cigs++;
-			j++;
+			map->cigs++;
+		j++;
 		}
 		j = 0;
 		i++;
 	}
-	if (map->player != 1 || map->cigs < 1 || map->exit != 1)
-		error('I');
+	i = 0;
+	return (map);
+}
+
+t_map	*cornercheck(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < map->height - 1)
+	{
+		j = 0;
+		while (j < map->width - 1)
+		{
+			if (map->map[0][j] != '1')
+				error('C');
+			if (map->map[map->height - 2][j] != '1')
+				error('C');
+			if (map->map[i][0] != '1')
+				error('C');
+			if (map->map[i][map->width - 2] != '1')
+				error('C');
+			j++;
+		}
+		i++;
+	}
 	return (map);
 }

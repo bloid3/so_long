@@ -6,11 +6,23 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:08:03 by papereir          #+#    #+#             */
-/*   Updated: 2023/11/21 18:11:30 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:53:26 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+size_t	ft_strlen2(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (0);
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
 
 char	*ft_get_line(char *left_str)
 {

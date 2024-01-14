@@ -6,7 +6,7 @@
 #    By: papereir <papereir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/16 18:14:37 by papereir          #+#    #+#              #
-#    Updated: 2024/01/02 19:24:37 by papereir         ###   ########.fr        #
+#    Updated: 2024/01/14 13:03:59 by papereir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = so_long
 CC = gcc
 CFLAGS = -I. -Wall -Wextra -Werror -g3 -fsanitize=address
 
-SRCS = main.c error.c checkmap.c checkmap2.c get_map.c get_next_line_utils.c get_next_line.c  map.c
+SRCS = main.c error.c checkmap.c checkmap2.c get_map.c get_next_line_utils.c get_next_line.c  draw_map.c keys.c
 OBJS = $(SRCS:.c=.o)
 
 LIBMLX = minilibx/

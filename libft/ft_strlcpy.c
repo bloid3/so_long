@@ -6,13 +6,13 @@
 /*   By: papereir <papereir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 19:50:08 by papereir          #+#    #+#             */
-/*   Updated: 2022/10/12 13:13:15 by papereir         ###   ########.fr       */
+/*   Updated: 2024/01/14 13:48:24 by papereir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst,char *src, size_t dstsize)
 {
 	char	*aux;
 	size_t	i;
